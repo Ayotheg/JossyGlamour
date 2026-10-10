@@ -17,7 +17,7 @@ function PersonalStyling() {
   return (
     <section className="bg-white">
       <div className="mx-auto grid max-w-site grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-center gap-[clamp(32px,5vw,80px)] px-gutter py-section-y">
-        <Reveal className="aspect-4/5 max-h-[min(620px,80vh)] w-full max-w-125 min-w-0 justify-self-start overflow-hidden rounded-lg bg-pink-300">
+        <Reveal className="aspect-[4/4.4] max-h-[min(620px,80vh)] w-full max-w-125 min-w-0 justify-self-start overflow-hidden rounded-[18px] bg-pink-300 tab:aspect-4/5 tab:rounded-xl">
           <img
             src={stylingImage}
             alt="Personal styling"
@@ -30,7 +30,7 @@ function PersonalStyling() {
           <div className="font-label text-label font-medium text-pink-500 uppercase">
             One-on-one
           </div>
-          <h2 className="font-display text-[clamp(36px,4vw,56px)] leading-[1.02] font-bold tracking-[-0.04em] text-balance">
+          <h2 className="font-display text-[clamp(34px,4vw,56px)] leading-[1.02] font-bold tracking-[-0.04em] text-balance">
             Personal Styling &amp; Consultation
           </h2>
           <p className="text-body text-pretty text-charcoal">
@@ -57,7 +57,7 @@ function PersonalStyling() {
               href={site.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-pill bg-pink-500 px-7 py-4 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-black"
+              className="flex-auto rounded-pill bg-pink-500 px-7 py-4 text-center font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-black desk:flex-none"
             >
               Book a Consultation
             </a>

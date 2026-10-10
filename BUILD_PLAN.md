@@ -161,6 +161,16 @@ Status: `[ ]` not started, `[x]` done.
   - Image `alt` text, `width`/`height`, lazy-loading below the fold.
   - Update the home `<Seo />`, `sitemap.xml` and the share image if needed.
 
+## Mobile layout (done)
+
+Source: `Jossy Glamour Redesign-mobile/Jossyglamour Home.dc.html` (exported 2026-10-10 17:04), which is the Home design with responsive rules added. It supersedes the older export for anything it changes. Breakpoints: `tab:` at 560px and `desk:` at 860px.
+
+- Below 860px: 42px logo, round two-line menu button, full-screen menu (Home, Services, About, Gallery, Contact in large type, booking button, phone and Instagram), and a full-bleed photo hero with the headline over it, stacked full-width buttons and a "Newcastle, United Kingdom / Open 7 days" line.
+- Below 860px the "Book a Service" and "More on Instagram" buttons move below their grids as full-width buttons.
+- Below 560px: two-column gallery with 170px rows, smaller filter pills, 18px card corners, full-width founder photo, stacked CTA buttons, single-column footer with extra bottom padding for the back-to-top button. Between 560px and 860px the footer is two columns.
+- Section padding now starts at 56px instead of 72px.
+- The same folder has `Jossyglamour 404.dc.html`, a 404 page design that has **not** been built.
+
 ## Owner decisions (2026-10-10) — these override the design
 
 1. **It is a single-page app.** There are no separate service or booking pages. Never link to `jossyglamour.com/bookings/`, `/beauty-services/`, `/fashion-accessories/` or `/styling-creative-services/`.

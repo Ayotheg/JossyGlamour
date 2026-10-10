@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Inter:wght@400;500&amp;family=Manrope:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFF7FA;color:#000;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#000;text-decoration:none}
+a:hover{color:#DD3185}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family:Manrope, sans-serif;background:#FFF7FA;color:#000;min-height:100vh">
+
+<header style="position:sticky;top:0;z-index:20;background:#FEFEFE;border-bottom:1px solid rgba(62,60,65,0.08);box-shadow:0 1px 0 rgba(0,0,0,0.02)">
+  <nav style="max-width:1320px;margin:0 auto;padding:{{ m.navPad }} clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="#" style="display:flex;align-items:center"><img src="uploads/logo.jpg" alt="Jossy Glamour" style="height:{{ m.logoH }};width:auto;display:block;mix-blend-mode:multiply"></a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;align-items:center;gap:clamp(20px,4vw,64px);font-family:Geist, sans-serif;font-size:12px;font-weight:500;letter-spacing:0.12em;flex-wrap:wrap">
+      <a href="#" style="color:#DD3185">HOME</a>
+      <a href="#services" style="color:#3E3C41" style-hover="color:#DD3185">SERVICES</a>
+      <div style="display:flex;gap:clamp(16px,2vw,28px)">
+        <a href="#about" style="color:#3E3C41" style-hover="color:#DD3185">ABOUT</a>
+        <a href="#contact" style="color:#3E3C41" style-hover="color:#DD3185">CONTACT</a>
+      </div>
+    </div>
+    <a href="https://jossyglamour.com/bookings/" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:14px;background:#DD3185;color:#FEFEFE;padding:14px 26px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;flex-shrink:0;box-shadow:0 10px 24px -10px rgba(221,49,133,0.7)" style-hover="background:#000;color:#FEFEFE;box-shadow:none">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+      Book an Appointment
+    </a>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(62,60,65,0.18);background:#FEFEFE;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
+        <span style="width:18px;height:1.5px;background:#000;transition:transform .3s ease;transform:{{ burger.a }}"></span>
+        <span style="width:18px;height:1.5px;background:#000;transition:transform .3s ease;transform:{{ burger.b }}"></span>
+      </button>
+    </sc-if>
+  </nav>
+  <sc-if value="{{ menuVisible }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:100%;left:0;right:0;height:calc(100vh - 100%);background:#FEFEFE;border-top:1px solid rgba(62,60,65,0.08);padding:28px 20px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;overflow-y:auto">
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ mobileLinks }}" as="ml" hint-placeholder-count="4">
+          <a href="{{ ml.href }}" onClick="{{ closeMenu }}" style="font-family:Satoshi, sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.03em;color:{{ ml.color }};padding:14px 0;border-bottom:1px solid rgba(62,60,65,0.1);display:flex;justify-content:space-between;align-items:center">{{ ml.label }}<span style="font-size:18px;color:#DD3185">→</span></a>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <a href="https://jossyglamour.com/bookings/" onClick="{{ closeMenu }}" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:16px;background:#DD3185;color:#FEFEFE;padding:18px 26px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+          Book an Appointment
+        </a>
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:Geist, sans-serif;font-size:13px;color:#3E3C41">
+          <a href="tel:+447587975813" style="color:#3E3C41">+44 7587 975813</a>
+          <a href="https://instagram.com/jossyglamour" style="color:#DD3185">@jossyglamour</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</header>
+
+<!-- Hero -->
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<section style="background:#FFF7FA">
+  <div style="position:relative;height:min(calc(100svh - 72px), 620px);min-height:440px;overflow:hidden;background:#3E3C41">
+    <sc-for list="{{ heroSlides }}" as="hs" hint-placeholder-count="1">
+      <img src="{{ hs.src }}" alt="{{ hs.label }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;transition:opacity 1.2s ease, transform 6s ease-out;opacity:{{ hs.o }};transform:{{ hs.t }}">
+    </sc-for>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 70%)"></div>
+    <sc-if value="{{ isSlideshow }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;top:16px;left:20px;right:20px;display:flex;gap:6px">
+        <sc-for list="{{ heroSlides }}" as="d" hint-placeholder-count="4">
+          <button onClick="{{ d.go }}" aria-label="Show slide" style="flex:1;height:2px;border:0;padding:0;border-radius:2px;cursor:pointer;background:{{ d.bg }};transition:background .4s ease"></button>
+        </sc-for>
+      </div>
+    </sc-if>
+    <div style="position:absolute;left:20px;right:20px;bottom:28px;display:flex;flex-direction:column;gap:14px;color:#FEFEFE;transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);opacity:{{ intro.o }};transform:{{ intro.t }}">
+      <div style="font-family:Geist, sans-serif;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#FFE6F1;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1px;background:#E093B8"></span>{{ heroLabel }}</div>
+      <h1 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:clamp(38px,11vw,52px);line-height:1;letter-spacing:-0.04em;margin:0;text-wrap:balance;color:#FEFEFE">Endless beauty <span style="color:#E093B8">without borders.</span></h1>
+    </div>
+  </div>
+  <div style="padding:28px 20px 48px;display:flex;flex-direction:column;gap:24px;transition:opacity .9s ease .2s, transform .9s cubic-bezier(.2,.7,.2,1) .2s;opacity:{{ intro.o }};transform:{{ intro.t }}">
+    <p style="font-size:16px;line-height:1.65;color:#3E3C41;margin:0;text-wrap:pretty">Jossyglamour is a UK-based beauty and fashion brand in Newcastle, United Kingdom, specialising in custom headwear, fascinators, professional makeup, and personal styling for weddings, cultural events, photoshoots, and special occasions.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="https://jossyglamour.com/bookings/" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;background:#000;color:#FEFEFE;padding:17px 24px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:10px" style-hover="background:#DD3185;color:#FEFEFE">Book an Appointment <span>→</span></a>
+      <a href="#services" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;color:#000;padding:16px 24px;border-radius:999px;border:1px solid #000;display:flex;justify-content:center" style-hover="border-color:#DD3185;color:#DD3185">Explore Services</a>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:12px;padding-top:20px;border-top:1px solid rgba(62,60,65,0.12);font-family:Geist, sans-serif;font-size:12px;letter-spacing:0.04em;color:#3E3C41">
+      <span>Newcastle, United Kingdom</span>
+      <span style="color:#DD3185">Open 7 days</span>
+    </div>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<section style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,72px) clamp(56px,7vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    
+    <h1 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:clamp(46px,5.8vw,84px);line-height:0.98;letter-spacing:-0.04em;margin:0;text-wrap:balance;transition:opacity .9s ease .12s, transform .9s cubic-bezier(.2,.7,.2,1) .12s;opacity:{{ intro.o }};transform:{{ intro.t }}">Endless beauty <span style="color:#DD3185">without borders.</span></h1>
+    <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:#3E3C41;margin:0;max-width:500px;text-wrap:pretty;transition:opacity .9s ease .24s, transform .9s cubic-bezier(.2,.7,.2,1) .24s;opacity:{{ intro.o }};transform:{{ intro.t }}">Jossyglamour is a UK-based beauty and fashion brand in Newcastle, United Kingdom, specialising in custom headwear, fascinators, professional makeup, and personal styling for weddings, cultural events, photoshoots, and special occasions.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px;transition:opacity .9s ease .36s, transform .9s cubic-bezier(.2,.7,.2,1) .36s;opacity:{{ intro.o }};transform:{{ intro.t }}">
+      <a href="https://jossyglamour.com/bookings/" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;background:#000;color:#FEFEFE;padding:17px 30px;border-radius:999px;display:flex;align-items:center;gap:10px" style-hover="background:#DD3185;color:#FEFEFE">Book an Appointment <span>→</span></a>
+      <a href="#services" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;color:#000;padding:16px 28px;border-radius:999px;border:1px solid #000" style-hover="border-color:#DD3185;color:#DD3185">Explore Services</a>
+    </div>
+  </div>
+  <div style="position:relative;width:100%;max-width:420px;justify-self:center;transition:opacity 1.1s ease .2s, transform 1.1s cubic-bezier(.2,.7,.2,1) .2s;opacity:{{ intro.o }};transform:{{ intro.t }}">
+    <div style="position:relative;aspect-ratio:4/5;border-radius:180px 180px 16px 16px;overflow:hidden;background:#E093B8">
+      <sc-for list="{{ heroSlides }}" as="hs" hint-placeholder-count="1">
+        <img src="{{ hs.src }}" alt="{{ hs.label }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 1.2s ease, transform 6s ease-out;opacity:{{ hs.o }};transform:{{ hs.t }}">
+      </sc-for>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:48px 20px 18px;background:linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+        <span style="font-family:Geist, sans-serif;font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#FEFEFE">{{ heroLabel }}</span>
+        <sc-if value="{{ isSlideshow }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;gap:6px">
+            <sc-for list="{{ heroSlides }}" as="d" hint-placeholder-count="4">
+              <button onClick="{{ d.go }}" aria-label="Show slide" style="width:{{ d.w }};height:3px;border:0;padding:0;border-radius:2px;cursor:pointer;background:{{ d.bg }};transition:width .4s ease, background .4s ease"></button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+    <div style="position:absolute;left:{{ m.cardLeft }};bottom:56px;background:#DD3185;color:#FEFEFE;border-radius:14px;padding:16px 18px;max-width:200px;box-shadow:0 20px 40px -20px rgba(221,49,133,0.7)">
+      <div style="font-family:Satoshi, sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.01em;line-height:1.25">Fascinators, hats, turbans &amp; gele</div>
+      <div style="font-family:Inter, sans-serif;font-size:12px;margin-top:6px;color:#FFE6F1">Made to order for special occasions</div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- Services -->
+<section id="services" style="max-width:1320px;margin:0 auto;padding:clamp(56px,9vw,128px) clamp(20px,5vw,72px)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#DD3185">Services</div>
+      <h2 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:clamp(38px,4.6vw,64px);letter-spacing:-0.04em;line-height:1;margin:0">Our Services</h2>
+    </div>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <a href="https://jossyglamour.com/bookings/" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;background:#000;color:#FEFEFE;padding:16px 28px;border-radius:999px" style-hover="background:#DD3185;color:#FEFEFE">Book a Service</a>
+    </sc-if>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px">
+    <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+      <a href="{{ s.href }}" style="background:#FEFEFE;border-radius:{{ m.cardR }};overflow:hidden;display:flex;flex-direction:column;color:#000;border:1px solid rgba(221,49,133,0.12);transition:transform .3s ease, box-shadow .3s ease" style-hover="transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(221,49,133,0.45);color:#000">
+        <div style="aspect-ratio:4/3;overflow:hidden;background:#E093B8">
+          <img src="{{ s.img }}" alt="{{ s.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="padding:{{ m.cardPad }};display:flex;flex-direction:column;gap:14px;flex:1">
+          <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;color:#DD3185">{{ s.num }}</div>
+          <h3 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:{{ m.h3 }};letter-spacing:-0.025em;margin:0">{{ s.title }}</h3>
+          <div style="display:flex;flex-direction:column;flex:1">
+            <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
+              <div style="display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(62,60,65,0.08);font-size:15px;line-height:1.5;color:#3E3C41"><span style="width:5px;height:5px;border-radius:50%;background:#DD3185;flex-shrink:0;transform:translateY(-3px)"></span>{{ it }}</div>
+            </sc-for>
+          </div>
+          <div style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:14px;padding-top:10px;display:flex;justify-content:space-between">Learn more <span style="color:#DD3185">→</span></div>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <a href="https://jossyglamour.com/bookings/" style="margin-top:24px;font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;background:#000;color:#FEFEFE;padding:17px 24px;border-radius:999px;display:flex;justify-content:center;align-items:center;gap:10px" style-hover="background:#DD3185;color:#FEFEFE">Book a Service <span>→</span></a>
+  </sc-if>
+</section>
+
+<!-- Personal styling -->
+<section style="background:#FEFEFE">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,9vw,128px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,5vw,80px);align-items:center">
+    <div style="width:100%;max-width:500px;justify-self:start;aspect-ratio:{{ m.styleRatio }};max-height:min(620px,80vh);border-radius:{{ m.cardR }};overflow:hidden;background:#E093B8;min-width:0">
+      <img src="https://jossyglamour.com/wp-content/uploads/2026/01/Styling-Creative-Services-001.jpeg" alt="Personal styling" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#DD3185">One-on-one</div>
+      <h2 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:clamp(34px,4vw,56px);letter-spacing:-0.04em;line-height:1.02;margin:0;text-wrap:balance">Personal Styling &amp; Consultation</h2>
+      <p style="font-size:17px;line-height:1.7;color:#3E3C41;margin:0;text-wrap:pretty">We offer one-on-one styling consultation to help you choose the perfect look for your event.</p>
+      <div style="display:flex;flex-direction:column;border-top:1px solid rgba(62,60,65,0.14)">
+        <div style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid rgba(62,60,65,0.14)">
+          <span style="font-family:Geist, sans-serif;font-size:13px;color:#DD3185;padding-top:3px">A</span>
+          <span style="font-size:16px;line-height:1.65;color:#000">We guide you on how to match your outfit, headwear, and accessories. Whether you are unsure of what to wear or how to combine your look, we help you create a complete and elegant appearance.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid rgba(62,60,65,0.14)">
+          <span style="font-family:Geist, sans-serif;font-size:13px;color:#DD3185;padding-top:3px">B</span>
+          <span style="font-size:16px;line-height:1.65;color:#000">We also support clients with outfit ideas for weddings, traditional events, and special occasions, including multiple outfit changes.</span>
+        </div>
+      </div>
+      <div style="display:flex">
+        <a href="https://jossyglamour.com/bookings/" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;background:#DD3185;color:#FEFEFE;padding:16px 28px;border-radius:999px;flex:{{ m.btnFlex }};text-align:center" style-hover="background:#000;color:#FEFEFE">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who we are / Founder / Vision -->
+<section id="about" style="background:#FEFEFE;border-top:1px solid rgba(221,49,133,0.12);border-bottom:1px solid rgba(221,49,133,0.12)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,120px) clamp(20px,5vw,72px);display:flex;flex-direction:column;gap:clamp(48px,6vw,80px)">
+    <div style="display:flex;align-items:center;gap:clamp(28px,4vw,56px);flex-wrap:wrap">
+      <div style="width:{{ m.founderW }};flex-shrink:0;border-radius:0 0 12px 12px;overflow:hidden">
+        <img src="uploads/JossyGlamour-CEO.jpeg" alt="Josephine Chukwu, founder and creative director" style="width:100%;height:auto;display:block;background:#E093B8">
+        <div style="display:flex;flex-direction:column;gap:4px;padding:16px 18px 18px;background:#DD3185">
+          <span style="font-family:Satoshi, sans-serif;font-weight:700;font-size:17px;color:#FEFEFE">Josephine Chukwu</span>
+          <span style="font-family:Geist, sans-serif;font-size:11px;letter-spacing:0.14em;color:#FFE6F1">FOUNDER · CREATIVE DIRECTOR</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;flex:1 1 280px;max-width:760px">
+        <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#DD3185">About Jossyglamour</div>
+        <h2 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:clamp(32px,3.6vw,48px);letter-spacing:-0.035em;line-height:1.08;margin:0;text-wrap:balance">Led by founder and creative director Josephine Chukwu.</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,5vw,72px);border-top:1px solid rgba(62,60,65,0.12);padding-top:clamp(32px,4vw,48px)">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;color:#DD3185">01 — Who We Are</div>
+        <p style="font-size:17px;line-height:1.7;color:#3E3C41;margin:0;text-wrap:pretty">Jossyglamour designs and creates unique headpieces and accessories, including fascinators, hats, turbans, gele (African headwrap), customised hand fans, and traditional caps. We also offer professional makeup, hair, and beauty services, along with one-on-one styling so every client looks and feels confident on their big day.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;color:#DD3185">02 — Our Founder</div>
+        <p style="font-size:17px;line-height:1.7;color:#3E3C41;margin:0;text-wrap:pretty">Josephine Chukwu has worked in the beauty and fashion industry since 2019. Her work combines makeup artistry, photography, and bespoke fashion accessories. Each piece is made to complement the client's style, outfit, and occasion, whether that is a wedding, fashion event, celebration, or formal gathering.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;color:#DD3185">03 — Our Vision</div>
+        <p style="font-size:17px;line-height:1.7;color:#3E3C41;margin:0;text-wrap:pretty">We aim to grow Jossyglamour into a fashion and creative business that offers training, production, and skills development to empower others.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Work -->
+<section id="work" style="max-width:1320px;margin:0 auto;padding:clamp(56px,9vw,128px) clamp(20px,5vw,72px)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,56px)">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#DD3185">Gallery</div>
+      <h2 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:clamp(38px,4.6vw,64px);letter-spacing:-0.04em;line-height:1;margin:0">Our Work</h2>
+    </div>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <a href="http://Instagram.com/jossyglamour" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;color:#000;padding:15px 26px;border-radius:999px;border:1px solid #000" style-hover="border-color:#DD3185;color:#DD3185">More on Instagram ↗</a>
+    </sc-if>
+  </div>
+  <div style="display:flex;gap:{{ m.pillGap }};flex-wrap:wrap;margin-bottom:{{ m.pillMb }}">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+      <button onClick="{{ f.select }}" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:{{ m.pillFont }};white-space:nowrap;padding:{{ m.pillPad }};border-radius:999px;cursor:pointer;transition:background .2s ease, color .2s ease, border-color .2s ease;background:{{ f.bg }};color:{{ f.fg }};border:1px solid #000" style-hover="border-color:#DD3185">{{ f.label }}</button>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ m.galCols }};grid-auto-rows:{{ m.galRow }};grid-auto-flow:dense;gap:{{ m.galGap }}">
+    <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+      <div style="grid-row:{{ g.rows }};border-radius:{{ m.galR }};overflow:hidden;background:#E093B8">
+        <img src="{{ g.src }}" alt="Jossyglamour work" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.04)">
+      </div>
+    </sc-for>
+  </div>
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <a href="http://Instagram.com/jossyglamour" style="margin-top:24px;font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;color:#000;padding:16px 24px;border-radius:999px;border:1px solid #000;display:flex;justify-content:center" style-hover="border-color:#DD3185;color:#DD3185">More on Instagram ↗</a>
+  </sc-if>
+</section>
+
+<!-- Treat Yourself -->
+<section style="padding:0 clamp(20px,5vw,72px) clamp(56px,9vw,128px)">
+  <div style="max-width:1176px;margin:0 auto;background:#DD3185;color:#FEFEFE;border-radius:{{ m.ctaR }};padding:clamp(40px,7vw,96px) clamp(24px,6vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:{{ m.ctaGap }};align-items:end">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="font-family:Geist, sans-serif;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFE6F1">Book An Appointment</div>
+      <h2 style="font-family:Satoshi, sans-serif;font-weight:700;font-size:clamp(44px,6vw,84px);letter-spacing:-0.045em;line-height:0.95;margin:0">Treat Yourself</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <p style="font-size:17px;line-height:1.7;margin:0;color:#FEFEFE;text-wrap:pretty">At Jossyglamour, we don’t just provide services we create experiences that make you feel confident, empowered, and absolutely beautiful. Let us help you express your unique style and showcase your inner glow!</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;flex-direction:{{ m.ctaDir }}">
+        <a href="https://jossyglamour.com/bookings/" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;background:#000;color:#FEFEFE;padding:17px 30px;border-radius:999px;text-align:center" style-hover="background:#FEFEFE;color:#000">Book a Service →</a>
+        <a href="tel:+447587975813" style="font-family:'Plus Jakarta Sans', sans-serif;font-weight:600;font-size:15px;color:#FEFEFE;padding:16px 28px;border-radius:999px;border:1px solid #FEFEFE;text-align:center" style-hover="background:#FEFEFE;color:#DD3185">Call the Studio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" style="background:#000;color:#FEFEFE">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,88px) clamp(20px,5vw,72px) {{ m.footPb }};font-family:'Plus Jakarta Sans', sans-serif">
+    <div style="display:grid;grid-template-columns:{{ m.footCols }};gap:{{ m.footGap }};padding-bottom:clamp(40px,7vw,96px)">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <img src="uploads/logo.jpg" alt="Jossy Glamour" style="height:64px;width:auto;align-self:flex-start;filter:invert(1);mix-blend-mode:screen">
+        
+        <p style="font-size:13.5px;line-height:1.7;color:#D9D6DC;margin:4px 0 0;max-width:280px;text-wrap:pretty">Endless Beauty Without Borders. Custom headwear, fascinators, professional makeup, and personal styling for weddings, cultural events, and special occasions.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;line-height:1.7">
+        <div style="font-family:Satoshi, sans-serif;font-weight:700;font-size:14px;letter-spacing:0.04em;color:#FEFEFE;margin-bottom:6px">NEWCASTLE STUDIO</div>
+        <span style="color:#D9D6DC">Newcastle, United Kingdom</span>
+        <div style="display:flex;flex-direction:column;margin-top:14px">
+          <a href="mailto:info@jossyglamour.com" style="color:#E093B8" style-hover="color:#FEFEFE">info@jossyglamour.com</a>
+          <a href="tel:+447587975813" style="color:#E093B8" style-hover="color:#FEFEFE">+44 7587 975813</a>
+          <a href="https://instagram.com/jossyglamour" style="color:#E093B8" style-hover="color:#FEFEFE">@jossyglamour</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.6;color:#D9D6DC">
+        <div style="font-family:Satoshi, sans-serif;font-weight:700;font-size:14px;letter-spacing:0.04em;color:#FEFEFE;margin-bottom:6px">STUDIO HOURS</div>
+        <span><span style="color:#FEFEFE;font-weight:600">Monday – Friday:</span> 11:00 am – 9:00 pm</span>
+        <span><span style="color:#FEFEFE;font-weight:600">Saturday – Sunday:</span> 11:00 am – 5:00 pm</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.7">
+        <div style="font-family:Satoshi, sans-serif;font-weight:700;font-size:14px;letter-spacing:0.04em;color:#FEFEFE;margin-bottom:6px">PRIVATE CONSULTATIONS</div>
+        <span style="color:#D9D6DC;text-wrap:pretty">One-on-one personal styling consultations and outfit planning for weddings and traditional events, including multiple outfit changes.</span>
+        <a href="https://jossyglamour.com/bookings/" style="font-family:Geist, sans-serif;font-weight:600;font-size:12px;letter-spacing:0.1em;color:#E093B8;display:flex;align-items:center;gap:6px" style-hover="color:#FEFEFE">RESERVE FITTING ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(254,254,254,0.12);font-family:Inter, sans-serif;font-size:12.5px;color:#D9D6DC">
+      <span>© 2026 Jossyglamour Atelier &amp; Beauty Ltd. All rights reserved.</span>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</footer>
+<button onClick="{{ toTop }}" aria-label="Back to top" style="position:fixed;left:50%;bottom:24px;z-index:30;width:52px;height:52px;border-radius:50%;border:0;background:#000;color:#FEFEFE;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -12px rgba(0,0,0,0.5);transition:opacity .35s ease, transform .35s ease, background .2s ease;opacity:{{ topBtn.o }};transform:{{ topBtn.t }};pointer-events:{{ topBtn.pe }}" style-hover="background:#DD3185">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;slideshow&quot;,&quot;still&quot;],&quot;default&quot;:&quot;slideshow&quot;,&quot;tsType&quot;:&quot;'slideshow' | 'still'&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;galleryCount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:12,&quot;min&quot;:4,&quot;max&quot;:12,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Gallery&quot;}}">
+class Component extends DCLogic {
+  state = { ready: false, slide: 0, showTop: false, w: typeof window !== "undefined" ? window.innerWidth : 1280, menu: false };
+  rootRef = React.createRef();
+  componentDidMount() {
+    const root = this.rootRef.current;
+    if (root) {
+      const targets = [...root.querySelectorAll(':scope > section')].slice(1).concat([...root.querySelectorAll(':scope > footer')]);
+      const prep = el => { el.style.opacity = '0'; el.style.transform = 'translateY(36px)'; el.style.transition = 'opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)'; };
+      targets.forEach(prep);
+      this.pending = targets;
+    }
+    this.reveal = () => {
+      if (!this.pending || !this.pending.length) return;
+      const lim = window.innerHeight - 40;
+      this.pending = this.pending.filter(el => {
+        if (el.getBoundingClientRect().top < lim) { el.style.opacity = '1'; el.style.transform = 'none'; return false; }
+        return true;
+      });
+    };
+    this.onScroll = () => { this.reveal(); const v = window.scrollY > 600; if (v !== this.state.showTop) this.setState({ showTop: v }); };
+    this.onResize = () => { this.reveal(); const w = window.innerWidth; if (w !== this.state.w) this.setState(s => ({ w, menu: w < 860 ? s.menu : false })); };
+    window.addEventListener('resize', this.onResize);
+    requestAnimationFrame(() => this.reveal());
+    this.safety = setTimeout(() => { (this.pending || []).forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }); this.pending = []; }, 8000);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    requestAnimationFrame(() => setTimeout(() => this.setState({ ready: true }), 60));
+    this.timer = setInterval(() => { if ((this.props.heroMode ?? 'slideshow') === 'slideshow') this.setState(s => ({ slide: (s.slide + 1) % 4 })); }, 5000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.safety); window.removeEventListener('resize', this.onResize); window.removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    const u = 'https://jossyglamour.com/wp-content/uploads/';
+    const slideshow = (this.props.heroMode ?? 'slideshow') === 'slideshow';
+    const hero = [['2025/12/Jossy-img-3.jpeg','Custom headwear'],['2026/01/Beuaty-img-123.jpeg','Beauty services'],['2026/01/FA-JossyGlamour-6.jpeg','Fashion & accessories'],['2026/01/Jossyglamour-Parafet-img-7.jpeg','Styling & creative']];
+    const cur = slideshow ? this.state.slide : 0;
+    const ready = this.state.ready;
+    const imgs = ['2025/12/Jossy-img-3.jpeg','2026/01/Beuaty-img-123.jpeg','2025/12/Jossy-img-4.jpeg','2026/01/FA-JossyGlamour-6.jpeg','2025/12/Jossy-img-6.jpeg','2026/01/Jossyglamour-Parafet-img-7.jpeg','2025/12/Jossy-img-2.jpeg','2026/01/Jossyglamour-Parafet-img-6.jpeg','2026/01/Jossy-img-2.jpeg','2026/01/Jossyglamour-Parafet-img-5.jpeg','2026/01/Styling-Creative-Services-001.jpeg','2026/01/Jossyglamour-Parafet-img-8.jpeg'];
+    const count = Math.max(4, Math.min(12, this.props.galleryCount ?? 12));
+    const tall = new Set([0, 3, 7, 10]);
+    return {
+      intro: { o: ready ? 1 : 0, t: ready ? 'translateY(0)' : 'translateY(18px)' },
+      rootRef: this.rootRef,
+      ...(() => {
+        const w = this.state.w, mob = w < 860, sm = w < 560, open = mob && this.state.menu;
+        return {
+          isDesktop: !mob, isMobile: mob, menuVisible: open,
+          toggleMenu: () => this.setState(s => ({ menu: !s.menu })),
+          closeMenu: () => this.setState({ menu: false }),
+          burger: open ? { a: 'translateY(3.25px) rotate(45deg)', b: 'translateY(-3.25px) rotate(-45deg)' } : { a: 'none', b: 'none' },
+          mobileLinks: [['Home', '#', '#DD3185'], ['Services', '#services', '#000'], ['About', '#about', '#000'], ['Gallery', '#work', '#000'], ['Contact', '#contact', '#000']].map(([label, href, color]) => ({ label, href, color })),
+          m: {
+            navPad: mob ? '14px' : '20px',
+            logoH: mob ? '42px' : '52px',
+            cardLeft: sm ? '12px' : '-28px',
+            cardPad: sm ? '22px' : '28px',
+            cardR: sm ? '18px' : '24px',
+            h3: sm ? '22px' : '26px',
+            styleRatio: sm ? '4/4.4' : '4/5',
+            btnFlex: mob ? '1 1 auto' : '0 0 auto',
+            founderW: sm ? '100%' : 'clamp(200px,20vw,260px)',
+            pillGap: sm ? '8px' : '10px',
+            pillFont: sm ? '13px' : '14px',
+            pillPad: sm ? '10px 16px' : '12px 22px',
+            pillMb: sm ? '20px' : '28px',
+            galCols: sm ? 'repeat(2,minmax(0,1fr))' : 'repeat(auto-fill,minmax(min(100%,240px),1fr))',
+            galRow: sm ? '170px' : '240px',
+            galGap: sm ? '10px' : '14px',
+            galR: sm ? '12px' : '18px',
+            ctaR: sm ? '22px' : '32px',
+            ctaGap: sm ? '24px' : '40px',
+            ctaDir: sm ? 'column' : 'row',
+            footCols: sm ? '1fr' : (mob ? 'repeat(2,minmax(0,1fr))' : 'repeat(auto-fit,minmax(min(100%,220px),1fr))'),
+            footGap: sm ? '36px' : '48px',
+            footPb: sm ? '96px' : '48px'
+          }
+        };
+      })(),
+      topBtn: this.state.showTop ? { o: 1, t: 'translateX(-50%)', pe: 'auto' } : { o: 0, t: 'translateX(-50%) translateY(16px)', pe: 'none' },
+      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      isSlideshow: slideshow,
+      heroLabel: hero[cur][1],
+      heroSlides: hero.map(([p, label], i) => ({ src: u + p, label, o: i === cur ? 1 : 0, t: i === cur ? 'scale(1.06)' : 'scale(1)', w: i === cur ? '22px' : '8px', bg: i === cur ? '#FEFEFE' : 'rgba(254,254,254,0.5)', go: () => this.setState({ slide: i }) })),
+      services: [
+        { num: '01', title: 'Beauty Services', href: 'https://jossyglamour.com/beauty-services/', img: u + '2026/01/Beuaty-img-123.jpeg', items: ['Bridal and event makeup', 'Makeup for parties, photoshoots, and special events', 'Hair installations, braids, and hair styling', 'Microblading', 'Nail services'] },
+        { num: '02', title: 'Fashion & Accessories', href: 'https://jossyglamour.com/fashion-accessories/', img: u + '2026/01/FA-JossyGlamour-6.jpeg', items: ['Custom-made hats and fascinators', 'Bespoke headpieces', 'Gele (African headwrap) and head wraps', 'Turbans and traditional caps', 'Handmade and customised hand fans', 'Handmade fashion accessories'] },
+        { num: '03', title: 'Styling & Creative Services', href: 'https://jossyglamour.com/styling-creative-services/', img: u + '2026/01/Jossyglamour-Parafet-img-7.jpeg', items: ['One-on-one personal styling consultations', 'Outfit planning for weddings and traditional events, including multiple outfit changes', 'Costume design', 'Costume hire for shows, photoshoots, and themed parties'] }
+      ],
+      filters: [['all','All'],['beauty','Beauty Services'],['fashion','Fashion & Accessories'],['styling','Styling & Creative Services']].map(([id, label]) => {
+        const on = (this.state.cat || 'all') === id;
+        return { label, bg: on ? '#000' : 'transparent', fg: on ? '#FEFEFE' : '#000', select: () => this.setState({ cat: id }) };
+      }),
+      gallery: (() => {
+        const cat = this.state.cat || 'all';
+        const catOf = p => /Beuaty/.test(p) || p === '2026/01/Jossy-img-2.jpeg' || p === '2025/12/Jossy-img-6.jpeg' ? 'beauty' : /Parafet|Styling/.test(p) ? 'styling' : 'fashion';
+        const list = cat === 'all' ? imgs.slice(0, count) : imgs.filter(p => catOf(p) === cat);
+        return list.map((p, i) => ({ src: u + p, rows: (cat === 'all' ? tall.has(i) : i % 3 === 0) ? 'span 2' : 'span 1' }));
+      })()
+    };
+  }
+}
+</script>
+</body>
+</html>

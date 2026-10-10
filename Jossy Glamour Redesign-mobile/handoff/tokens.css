@@ -1,0 +1,69 @@
+/* Jossyglamour — design tokens */
+:root {
+  /* Color — brand */
+  --color-pink-500: #DD3185;      /* primary accent, CTAs, active states */
+  --color-pink-300: #E093B8;      /* secondary accent, footer labels, image fallback */
+  --color-pink-100: #FFE6F1;      /* text on pink */
+  --color-pink-50:  #FFF0F6;      /* hover tint */
+  --color-blush:    #FFF7FA;      /* page background */
+  --color-white:    #FEFEFE;      /* surfaces, cards, header */
+  --color-black:    #000000;      /* headings, primary buttons */
+  --color-charcoal: #3E3C41;      /* body text, footer background */
+  --color-grey-300: #D9D6DC;      /* footer body text */
+
+  /* Color — lines */
+  --line-pink:  rgba(221, 49, 133, 0.12);
+  --line-ink:   rgba(62, 60, 65, 0.12);
+  --line-dark:  rgba(254, 254, 254, 0.12);
+
+  /* Typography — families */
+  --font-display: 'Satoshi', sans-serif;            /* titles, 700 */
+  --font-body:    'Manrope', sans-serif;            /* paragraphs, 400–600 */
+  --font-label:   'Geist', sans-serif;              /* nav, eyebrows, numbers, 500–600 */
+  --font-ui:      'Plus Jakarta Sans', sans-serif;  /* buttons, pills, footer, 600 */
+  --font-meta:    'Inter', sans-serif;              /* fine print, 400–500 */
+
+  /* Typography — scale (fluid) */
+  --text-h1:      clamp(46px, 5.8vw, 84px);  /* lh 0.98, ls -0.04em */
+  --text-h2:      clamp(38px, 4.6vw, 64px);  /* lh 1.0,  ls -0.04em */
+  --text-h2-sm:   clamp(32px, 3.6vw, 48px);  /* lh 1.08, ls -0.035em */
+  --text-h3:      26px;                      /* ls -0.025em */
+  --text-lead:    clamp(16px, 1.3vw, 18px);  /* lh 1.65 */
+  --text-body:    17px;                      /* lh 1.7 */
+  --text-small:   15px;
+  --text-ui:      14px;
+  --text-label:   13px;                      /* uppercase, ls 0.14em */
+  --text-micro:   11px;                      /* uppercase, ls 0.14em */
+
+  /* Spacing */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px;
+  --space-10: 40px; --space-12: 48px; --space-16: 64px;
+  --gutter:        clamp(20px, 5vw, 72px);
+  --section-y:     clamp(72px, 9vw, 128px);
+  --container:     1320px;
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-pill: 999px;
+  --radius-arch: 180px 180px 16px 16px;
+
+  /* Shadow */
+  --shadow-cta:   0 10px 24px -10px rgba(221, 49, 133, 0.7);
+  --shadow-card:  0 30px 60px -30px rgba(221, 49, 133, 0.45);
+  --shadow-menu:  0 24px 48px -24px rgba(62, 60, 65, 0.35);
+  --shadow-float: 0 14px 30px -12px rgba(0, 0, 0, 0.5);
+
+  /* Motion */
+  --ease-out:      cubic-bezier(.2, .7, .2, 1);
+  --dur-fast:      .2s;
+  --dur-base:      .35s;
+  --dur-reveal:    .9s;
+  --dur-crossfade: 1.2s;
+  --reveal-offset: 36px;
+  --slide-interval: 5000ms;
+}

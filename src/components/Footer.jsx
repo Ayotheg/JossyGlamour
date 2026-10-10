@@ -12,8 +12,8 @@ const linkClass =
 function Footer() {
   return (
     <footer id="contact" className="scroll-mt-20 bg-black text-white">
-      <Reveal className="mx-auto max-w-site px-gutter pt-[clamp(56px,7vw,88px)] pb-12 font-ui">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-12 pb-[clamp(56px,7vw,96px)]">
+      <Reveal className="mx-auto max-w-site px-gutter pt-[clamp(48px,7vw,88px)] pb-24 font-ui tab:pb-12">
+        <div className="grid grid-cols-1 gap-9 pb-[clamp(40px,7vw,96px)] tab:grid-cols-2 tab:gap-12 desk:grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))]">
           <div className="flex flex-col gap-3">
             <img
               src={site.logo}

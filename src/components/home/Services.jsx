@@ -20,7 +20,7 @@ function Services() {
           href={site.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-pill bg-black px-7 py-4 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-pink-500"
+          className="hidden rounded-pill bg-black px-7 py-4 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-pink-500 desk:block"
         >
           Book a Service
         </a>
@@ -33,7 +33,7 @@ function Services() {
               href={site.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full flex-col overflow-hidden rounded-xl border border-line-pink bg-white text-black transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card"
+              className="flex w-full flex-col overflow-hidden rounded-[18px] border border-line-pink bg-white text-black transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card tab:rounded-xl"
             >
               <div className="aspect-4/3 overflow-hidden bg-pink-300">
                 <img
@@ -43,11 +43,13 @@ function Services() {
                   className="block size-full object-cover"
                 />
               </div>
-              <div className="flex flex-1 flex-col gap-3.5 p-7">
+              <div className="flex flex-1 flex-col gap-3.5 p-5.5 tab:p-7">
                 <div className="font-label text-[13px] font-medium text-pink-500">
                   {service.num}
                 </div>
-                <h3 className="font-display text-h3 font-bold">{service.title}</h3>
+                <h3 className="font-display text-[22px] font-bold tracking-[-0.025em] tab:text-h3">
+                  {service.title}
+                </h3>
                 <ul className="flex flex-1 flex-col">
                   {service.items.map((item) => (
                     <li
@@ -68,6 +70,16 @@ function Services() {
           </Reveal>
         ))}
       </div>
+
+      <a
+        href={site.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 flex items-center justify-center gap-2.5 rounded-pill bg-black px-6 py-4.25 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-pink-500 desk:hidden"
+      >
+        Book a Service
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </a>
     </section>
   )
 }

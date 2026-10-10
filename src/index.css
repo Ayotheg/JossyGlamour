@@ -49,9 +49,13 @@
   --text-micro: 11px; /* uppercase */
   --text-micro--letter-spacing: 0.14em;
 
+  /* Breakpoints (from the mobile design: small phone < 560px, mobile < 860px) */
+  --breakpoint-tab: 35rem; /* 560px */
+  --breakpoint-desk: 53.75rem; /* 860px */
+
   /* Spacing */
   --spacing-gutter: clamp(20px, 5vw, 72px);
-  --spacing-section-y: clamp(72px, 9vw, 128px);
+  --spacing-section-y: clamp(56px, 9vw, 128px);
   --container-site: 1320px;
 
   /* Radius */

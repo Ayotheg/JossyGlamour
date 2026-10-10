@@ -22,9 +22,9 @@ function About() {
       id="about"
       className="scroll-mt-20 border-y border-line-pink bg-white"
     >
-      <div className="mx-auto flex max-w-site flex-col gap-[clamp(48px,6vw,80px)] px-gutter py-[clamp(64px,8vw,120px)]">
+      <div className="mx-auto flex max-w-site flex-col gap-[clamp(48px,6vw,80px)] px-gutter py-[clamp(56px,8vw,120px)]">
         <Reveal className="flex flex-wrap items-center gap-[clamp(28px,4vw,56px)]">
-          <div className="w-[clamp(200px,20vw,260px)] shrink-0 overflow-hidden rounded-b-[12px]">
+          <div className="w-full shrink-0 tab:w-[clamp(200px,20vw,260px)] overflow-hidden rounded-b-[12px]">
             <img
               src="/resources/JossyGlamour-CEO.jpeg"
               alt="Josephine Chukwu, founder and creative director"
@@ -42,7 +42,7 @@ function About() {
               </span>
             </div>
           </div>
-          <div className="flex max-w-190 flex-[1_1_420px] flex-col gap-4.5">
+          <div className="flex max-w-190 flex-[1_1_280px] flex-col gap-4.5">
             <div className="font-label text-label font-medium text-pink-500 uppercase">
               About Jossyglamour
             </div>
@@ -52,7 +52,7 @@ function About() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[clamp(40px,5vw,72px)] border-t border-line-ink pt-[clamp(32px,4vw,48px)]">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[clamp(28px,5vw,72px)] border-t border-line-ink pt-[clamp(32px,4vw,48px)]">
           {columns.map((column, i) => (
             <Reveal
               key={column.label}

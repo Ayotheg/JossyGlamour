@@ -11,6 +11,9 @@ const categoryLabels = Object.fromEntries(
   galleryFilters.map((filter) => [filter.id, filter.label]),
 )
 
+const instagramClass =
+  'items-center justify-center gap-1.5 rounded-pill border border-black font-ui text-small font-semibold text-black transition-colors duration-(--dur-fast) hover:border-pink-500 hover:text-pink-500'
+
 function Gallery() {
   const [category, setCategory] = useState('all')
 
@@ -35,21 +38,21 @@ function Gallery() {
           href={site.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 rounded-pill border border-black px-6.5 py-3.75 font-ui text-small font-semibold text-black transition-colors duration-(--dur-fast) hover:border-pink-500 hover:text-pink-500"
+          className={`hidden px-6.5 py-3.75 desk:flex ${instagramClass}`}
         >
           More on Instagram
           <ArrowUpRight className="size-4" aria-hidden="true" />
         </a>
       </Reveal>
 
-      <Reveal className="mb-7 flex flex-wrap gap-2.5">
+      <Reveal className="mb-5 flex flex-wrap gap-2 tab:mb-7 tab:gap-2.5">
         {galleryFilters.map((filter) => (
           <button
             key={filter.id}
             type="button"
             onClick={() => setCategory(filter.id)}
             aria-pressed={category === filter.id}
-            className={`cursor-pointer rounded-pill border border-black px-5.5 py-3 font-ui text-ui font-semibold transition-colors duration-(--dur-fast) hover:border-pink-500 ${
+            className={`cursor-pointer rounded-pill border border-black px-4 py-2.5 font-ui text-[13px] font-semibold whitespace-nowrap transition-colors duration-(--dur-fast) hover:border-pink-500 tab:px-5.5 tab:py-3 tab:text-ui ${
               category === filter.id
                 ? 'bg-black text-white'
                 : 'bg-transparent text-black'
@@ -60,14 +63,14 @@ function Gallery() {
         ))}
       </Reveal>
 
-      <div className="grid grid-flow-dense auto-rows-[240px] grid-cols-[repeat(auto-fill,minmax(min(100%,240px),1fr))] gap-3.5">
+      <div className="grid grid-flow-dense auto-rows-[170px] grid-cols-2 gap-2.5 tab:auto-rows-[240px] tab:grid-cols-[repeat(auto-fill,minmax(min(100%,240px),1fr))] tab:gap-3.5">
         {images.map((image, i) => {
           const tall = category === 'all' ? TALL.has(i) : i % 3 === 0
           return (
             <Reveal
               key={image.src}
               delay={(i % 4) * 80}
-              className={`overflow-hidden rounded-[18px] bg-pink-300 ${
+              className={`overflow-hidden rounded-[12px] bg-pink-300 tab:rounded-[18px] ${
                 tall ? 'row-span-2' : 'row-span-1'
               }`}
             >
@@ -81,6 +84,16 @@ function Gallery() {
           )
         })}
       </div>
+
+      <a
+        href={site.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`mt-6 flex px-6 py-4 desk:hidden ${instagramClass}`}
+      >
+        More on Instagram
+        <ArrowUpRight className="size-4" aria-hidden="true" />
+      </a>
     </section>
   )
 }
