@@ -15,6 +15,8 @@ export const site = {
   whatsapp: 'https://wa.me/447587975813',
   instagram: 'https://instagram.com/jossyglamour',
   instagramHandle: '@jossyglamour',
+  tiktok: 'https://www.tiktok.com/@newcastleglamheadwear',
+  tiktokHandle: '@newcastleglamheadwear',
   hours: [
     { days: 'Monday – Friday', time: '11:00 am – 9:00 pm' },
     { days: 'Saturday – Sunday', time: '11:00 am – 5:00 pm' },

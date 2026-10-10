@@ -1,5 +1,6 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../config/site.js'
+import { Instagram, Tiktok } from './BrandIcons.jsx'
 import Reveal from './Reveal.jsx'
 
 const year = new Date().getFullYear()
@@ -8,6 +9,25 @@ const headingClass =
   'mb-1.5 font-display text-sm font-bold tracking-[0.04em] text-white uppercase'
 const linkClass =
   'text-pink-300 transition-colors duration-(--dur-fast) hover:text-white'
+const iconLinkClass =
+  'flex size-10 items-center justify-center rounded-full border border-white/20 text-pink-300 transition-colors duration-(--dur-fast) hover:border-pink-500 hover:bg-pink-500 hover:text-white'
+
+const contacts = [
+  { label: `Email ${site.email}`, href: `mailto:${site.email}`, icon: Mail },
+  { label: `Call ${site.phone}`, href: site.phoneHref, icon: Phone },
+  {
+    label: `Instagram ${site.instagramHandle}`,
+    href: site.instagram,
+    icon: Instagram,
+    external: true,
+  },
+  {
+    label: `TikTok ${site.tiktokHandle}`,
+    href: site.tiktok,
+    icon: Tiktok,
+    external: true,
+  },
+]
 
 function Footer() {
   return (
@@ -32,22 +52,24 @@ function Footer() {
 
           <div className="flex flex-col gap-1.5 text-[13.5px] leading-[1.7]">
             <h2 className={headingClass}>Contact</h2>
-            <span className="text-grey-300">{site.location}</span>
-            <div className="mt-3.5 flex flex-col items-start">
-              <a href={`mailto:${site.email}`} className={linkClass}>
-                {site.email}
-              </a>
-              <a href={site.phoneHref} className={linkClass}>
-                {site.phone}
-              </a>
-              <a
-                href={site.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                {site.instagramHandle}
-              </a>
+            <span className="flex items-center gap-2 text-grey-300">
+              <MapPin className="size-4 shrink-0 text-pink-300" aria-hidden="true" />
+              {site.location}
+            </span>
+            <div className="mt-3.5 flex flex-wrap gap-2.5">
+              {contacts.map(({ label, href, icon: Icon, external }) => (
+                <a
+                  key={href}
+                  href={href}
+                  aria-label={label}
+                  title={label}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noopener noreferrer' : undefined}
+                  className={iconLinkClass}
+                >
+                  <Icon className="size-4.5" strokeWidth={1.75} aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
 
