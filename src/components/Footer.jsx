@@ -1,5 +1,5 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
-import { site } from '../config/site.js'
+import { site, whatsappLink } from '../config/site.js'
 import { Instagram, Tiktok } from './BrandIcons.jsx'
 import Reveal from './Reveal.jsx'
 
@@ -91,7 +91,7 @@ function Footer() {
               changes.
             </span>
             <a
-              href={site.whatsapp}
+              href={whatsappLink('consultation')}
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-1.5 self-start font-label text-xs font-semibold tracking-widest uppercase ${linkClass}`}

@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { site } from '../../config/site.js'
+import { whatsappLink } from '../../config/site.js'
 import { services } from '../../data/home.js'
 import Reveal from '../Reveal.jsx'
 
@@ -17,7 +17,7 @@ function Services() {
           <h2 className="font-display text-h2 font-bold">Our Services</h2>
         </div>
         <a
-          href={site.whatsapp}
+          href={whatsappLink('service')}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden rounded-pill bg-black px-7 py-4 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-pink-500 desk:block"
@@ -30,7 +30,9 @@ function Services() {
         {services.map((service, i) => (
           <Reveal key={service.num} delay={i * 120} className="flex">
             <a
-              href={site.whatsapp}
+              href={whatsappLink(
+                `Hi Jossyglamour, I would like to book ${service.title}.`,
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full flex-col overflow-hidden rounded-[18px] border border-line-pink bg-white text-black transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card tab:rounded-xl"
@@ -72,7 +74,7 @@ function Services() {
       </div>
 
       <a
-        href={site.whatsapp}
+        href={whatsappLink('service')}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 flex items-center justify-center gap-2.5 rounded-pill bg-black px-6 py-4.25 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-pink-500 desk:hidden"

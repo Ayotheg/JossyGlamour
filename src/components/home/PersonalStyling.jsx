@@ -1,4 +1,4 @@
-import { site } from '../../config/site.js'
+import { whatsappLink } from '../../config/site.js'
 import { stylingImage } from '../../data/home.js'
 import Reveal from '../Reveal.jsx'
 
@@ -54,7 +54,7 @@ function PersonalStyling() {
           </div>
           <div className="flex">
             <a
-              href={site.whatsapp}
+              href={whatsappLink('consultation')}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-auto rounded-pill bg-pink-500 px-7 py-4 text-center font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-black desk:flex-none"

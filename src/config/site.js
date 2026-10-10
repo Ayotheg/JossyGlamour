@@ -11,7 +11,8 @@ export const site = {
   phone: '+44 7587 975813',
   phoneHref: 'tel:+447587975813',
   email: 'info@jossyglamour.com',
-  // Every booking button opens a WhatsApp chat with this number.
+  // Every booking button opens a WhatsApp chat with this number; see
+  // whatsappLink() below for the pre-filled messages.
   whatsapp: 'https://wa.me/447587975813',
   instagram: 'https://instagram.com/jossyglamour',
   instagramHandle: '@jossyglamour',
@@ -21,4 +22,19 @@ export const site = {
     { days: 'Monday – Friday', time: '11:00 am – 9:00 pm' },
     { days: 'Saturday – Sunday', time: '11:00 am – 5:00 pm' },
   ],
+}
+
+// The message WhatsApp opens with, per button. The visitor can edit it before
+// sending.
+const whatsappMessages = {
+  appointment: 'Hi Jossyglamour, I would like to book an appointment.',
+  service: 'Hi Jossyglamour, I would like to book a service.',
+  consultation:
+    'Hi Jossyglamour, I would like to book a one-on-one personal styling consultation.',
+}
+
+// Pass a key of whatsappMessages, or any other text to use it as the message.
+export function whatsappLink(message) {
+  const text = whatsappMessages[message] ?? message
+  return `${site.whatsapp}?text=${encodeURIComponent(text)}`
 }

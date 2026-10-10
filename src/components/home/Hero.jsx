@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
-import { site } from '../../config/site.js'
+import { site, whatsappLink } from '../../config/site.js'
 import { heroSlides } from '../../data/home.js'
 import { DESKTOP_QUERY, useMediaQuery } from '../../hooks/useMediaQuery.js'
 
@@ -41,7 +41,7 @@ function DesktopHero({ slide, setSlide }) {
         </p>
         <div className="flex animate-fade-up flex-wrap gap-3 pt-1 [animation-delay:.36s]">
           <a
-            href={site.whatsapp}
+            href={whatsappLink('appointment')}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 rounded-pill bg-black px-7.5 py-4.25 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-pink-500"
@@ -131,7 +131,7 @@ function MobileHero({ slide, setSlide }) {
         <p className="text-base leading-[1.65] text-pretty text-charcoal">{intro}</p>
         <div className="flex flex-col gap-2.5">
           <a
-            href={site.whatsapp}
+            href={whatsappLink('appointment')}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2.5 rounded-pill bg-black px-6 py-4.25 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-pink-500"

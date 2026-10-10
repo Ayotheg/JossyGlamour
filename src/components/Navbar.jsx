@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import { ArrowRight, Calendar } from 'lucide-react'
-import { site } from '../config/site.js'
+import { site, whatsappLink } from '../config/site.js'
 import { DESKTOP_QUERY, useMediaQuery } from '../hooks/useMediaQuery.js'
 
 // Each link scrolls to a section of the home page. Gallery only appears in
@@ -94,7 +94,7 @@ function Navbar() {
         </div>
 
         <a
-          href={site.whatsapp}
+          href={whatsappLink('appointment')}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden shrink-0 items-center justify-center gap-2 rounded-pill bg-pink-500 px-6.5 py-3.5 font-ui text-ui font-semibold whitespace-nowrap text-white shadow-cta transition-[background-color,box-shadow] duration-(--dur-fast) hover:bg-black hover:shadow-none desk:flex"
@@ -146,7 +146,7 @@ function Navbar() {
 
           <div className="flex flex-col gap-4">
             <a
-              href={site.whatsapp}
+              href={whatsappLink('appointment')}
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}

@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { site } from '../../config/site.js'
+import { site, whatsappLink } from '../../config/site.js'
 import Reveal from '../Reveal.jsx'
 
 function BookingCta() {
@@ -23,7 +23,7 @@ function BookingCta() {
           </p>
           <div className="flex flex-col flex-wrap gap-3 tab:flex-row">
             <a
-              href={site.whatsapp}
+              href={whatsappLink('service')}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-pill bg-black px-7.5 py-4.25 font-ui text-small font-semibold text-white transition-colors duration-(--dur-fast) hover:bg-white hover:text-black"

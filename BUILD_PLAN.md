@@ -187,6 +187,8 @@ Source: `Jossy Glamour Redesign-mobile/Jossyglamour Home.dc.html` (exported 2026
    - "STUDIO HOURS" becomes "OPENING HOURS"; "NEWCASTLE STUDIO" becomes "CONTACT"; "Call the Studio" becomes "Call Us"; "RESERVE FITTING" becomes "BOOK A CONSULTATION". `About.md` never mentions a studio or fittings.
    - Contact details, hours, founder text and service lists come from `About.md` / `src/config/site.js`, not retyped from the design.
 
+10. **WhatsApp links open with a pre-filled message** that matches the button, built by `whatsappLink()` in `src/config/site.js`: appointment, service, consultation, and one per service card naming that service.
+
 ## Assumptions to confirm
 
 - **Service cards.** In the design each card links to its own page with "Learn more →". With no service pages, the plan is for the card's link to open WhatsApp and read "Book this service →".
