@@ -10,5 +10,6 @@ export const site = {
   location: 'Newcastle, United Kingdom',
   phone: '+44 7587 975813',
   email: 'info@jossyglamour.com',
+  whatsapp: 'https://wa.me/447587975813',
   instagram: 'https://instagram.com/jossyglamour',
 }

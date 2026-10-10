@@ -1,1 +1,103 @@
 @import 'tailwindcss';
+
+/* Design tokens, mirrored from "Jossy Glamour Redesign/handoff/tokens.css". */
+@theme {
+  /* Colour — brand */
+  --color-pink-500: #dd3185; /* primary accent, CTAs, active states */
+  --color-pink-300: #e093b8; /* secondary accent, footer labels, image fallback */
+  --color-pink-100: #ffe6f1; /* text on pink */
+  --color-pink-50: #fff0f6; /* hover tint */
+  --color-blush: #fff7fa; /* page background */
+  --color-white: #fefefe; /* surfaces, cards, header */
+  --color-black: #000000; /* headings, primary buttons */
+  --color-charcoal: #3e3c41; /* body text, footer background */
+  --color-grey-300: #d9d6dc; /* footer body text */
+
+  /* Colour — lines */
+  --color-line-pink: rgb(221 49 133 / 0.12);
+  --color-line-ink: rgb(62 60 65 / 0.12);
+  --color-line-dark: rgb(254 254 254 / 0.12);
+
+  /* Typography — families */
+  --font-display: 'Satoshi', sans-serif; /* titles, 700 */
+  --font-body: 'Manrope', sans-serif; /* paragraphs, 400–600 */
+  --font-sans: var(--font-body); /* Tailwind's default family */
+  --font-label: 'Geist', sans-serif; /* nav, eyebrows, numbers, 500–600 */
+  --font-ui: 'Plus Jakarta Sans', sans-serif; /* buttons, pills, footer, 600 */
+  --font-meta: 'Inter', sans-serif; /* fine print, 400–500 */
+
+  /* Typography — scale (fluid) */
+  --text-h1: clamp(46px, 5.8vw, 84px);
+  --text-h1--line-height: 0.98;
+  --text-h1--letter-spacing: -0.04em;
+  --text-h2: clamp(38px, 4.6vw, 64px);
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -0.04em;
+  --text-h2-sm: clamp(32px, 3.6vw, 48px);
+  --text-h2-sm--line-height: 1.08;
+  --text-h2-sm--letter-spacing: -0.035em;
+  --text-h3: 26px;
+  --text-h3--letter-spacing: -0.025em;
+  --text-lead: clamp(16px, 1.3vw, 18px);
+  --text-lead--line-height: 1.65;
+  --text-body: 17px;
+  --text-body--line-height: 1.7;
+  --text-small: 15px;
+  --text-ui: 14px;
+  --text-label: 13px; /* uppercase */
+  --text-label--letter-spacing: 0.14em;
+  --text-micro: 11px; /* uppercase */
+  --text-micro--letter-spacing: 0.14em;
+
+  /* Spacing */
+  --spacing-gutter: clamp(20px, 5vw, 72px);
+  --spacing-section-y: clamp(72px, 9vw, 128px);
+  --container-site: 1320px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+  --radius-arch: 180px 180px 16px 16px;
+
+  /* Shadow */
+  --shadow-cta: 0 10px 24px -10px rgb(221 49 133 / 0.7);
+  --shadow-card: 0 30px 60px -30px rgb(221 49 133 / 0.45);
+  --shadow-menu: 0 24px 48px -24px rgb(62 60 65 / 0.35);
+  --shadow-float: 0 14px 30px -12px rgb(0 0 0 / 0.5);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+:root {
+  --dur-fast: 0.2s;
+  --dur-base: 0.35s;
+  --dur-reveal: 0.9s;
+  --dur-crossfade: 1.2s;
+  --reveal-offset: 36px;
+  --slide-interval: 5000ms;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-blush);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
