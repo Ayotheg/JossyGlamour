@@ -5,11 +5,7 @@ import { galleryFilters, galleryImages } from '../../data/home.js'
 import Reveal from '../Reveal.jsx'
 
 // Tiles that span two rows in the "All" view.
-const TALL = new Set([0, 3, 7, 10])
-
-const categoryLabels = Object.fromEntries(
-  galleryFilters.map((filter) => [filter.id, filter.label]),
-)
+const TALL = new Set([0, 3, 7, 10, 13])
 
 const instagramClass =
   'items-center justify-center gap-1.5 rounded-pill border border-black font-ui text-small font-semibold text-black transition-colors duration-(--dur-fast) hover:border-pink-500 hover:text-pink-500'
@@ -76,7 +72,7 @@ function Gallery() {
             >
               <img
                 src={image.src}
-                alt={`Jossyglamour work: ${categoryLabels[image.category]}`}
+                alt={image.alt}
                 loading="lazy"
                 className="block size-full object-cover transition-transform duration-600 hover:scale-104"
               />

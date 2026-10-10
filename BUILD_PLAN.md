@@ -91,30 +91,31 @@ Some hairlines in the design are 8% or 14% charcoal; use `border-charcoal/8` and
 
 The hero badge shadow (`0 20px 40px -20px` pink at 70%) is in the design but not in the token file; write it as an arbitrary value.
 
-## Images
+## Images (real photos in place)
 
-All twelve go in `public/gallery/`, named as `download-images.sh` names them (the upload path with `/` replaced by `-`, which keeps the two `Jossy-img-2.jpeg` files apart). Base URL: `https://jossyglamour.com/wp-content/uploads/`.
+The owner supplied 16 photos as `public/resources/1.jpg` to `16.jpg` on 2026-10-10. The site uses cropped, web-sized copies in `public/gallery/`, listed in `src/data/home.js` with a category and alt text each. The earlier placeholder files and the `2025-12-…` / `2026-01-…` naming are gone.
 
-**The site sits behind a Vercel security check, so `curl` and the download script get a "Security Checkpoint" page instead of the image.** Open each URL in a browser and use "Save image as". A real file is a photo of a few hundred KB; a 34 KB file is the checkpoint page.
-
-| # | Download path | Save as (in `public/gallery/`) | Category | Used in |
+| Source | Gallery file | Category | Also used in | Edit made |
 |---|---|---|---|---|
-| 1 | `2025/12/Jossy-img-3.jpeg` | `2025-12-Jossy-img-3.jpeg` | fashion | Hero slide 1, gallery |
-| 2 | `2026/01/Beuaty-img-123.jpeg` | `2026-01-Beuaty-img-123.jpeg` | beauty | Hero slide 2, Services card 01, gallery |
-| 3 | `2025/12/Jossy-img-4.jpeg` | `2025-12-Jossy-img-4.jpeg` | fashion | Gallery |
-| 4 | `2026/01/FA-JossyGlamour-6.jpeg` | `2026-01-FA-JossyGlamour-6.jpeg` | fashion | Hero slide 3, Services card 02, gallery |
-| 5 | `2025/12/Jossy-img-6.jpeg` | `2025-12-Jossy-img-6.jpeg` | beauty | Gallery |
-| 6 | `2026/01/Jossyglamour-Parafet-img-7.jpeg` | `2026-01-Jossyglamour-Parafet-img-7.jpeg` | styling | Hero slide 4, Services card 03, gallery |
-| 7 | `2025/12/Jossy-img-2.jpeg` | `2025-12-Jossy-img-2.jpeg` | fashion | Gallery |
-| 8 | `2026/01/Jossyglamour-Parafet-img-6.jpeg` | `2026-01-Jossyglamour-Parafet-img-6.jpeg` | styling | Gallery |
-| 9 | `2026/01/Jossy-img-2.jpeg` | `2026-01-Jossy-img-2.jpeg` | beauty | Gallery |
-| 10 | `2026/01/Jossyglamour-Parafet-img-5.jpeg` | `2026-01-Jossyglamour-Parafet-img-5.jpeg` | styling | Gallery |
-| 11 | `2026/01/Styling-Creative-Services-001.jpeg` | `2026-01-Styling-Creative-Services-001.jpeg` | styling | Personal Styling section, gallery |
-| 12 | `2026/01/Jossyglamour-Parafet-img-8.jpeg` | `2026-01-Jossyglamour-Parafet-img-8.jpeg` | styling | Gallery |
+| 1.jpg | red-feather-fascinator.jpg | styling | Personal Styling section | none |
+| 2.jpg | gold-ribbon-fascinator.jpg | fashion | Hero slide 1 | none |
+| 3.jpg | teal-flower-headpiece.jpg | fashion | Hero slide 3 | none |
+| 4.jpg | black-feather-fascinator.jpg | fashion | | pink frame trimmed |
+| 5.jpg | red-sunburst-crown-photoshoot.jpg | beauty | Hero slide 2, Beauty card | cropped out of an Instagram screenshot |
+| 6(1).jpg | green-feather-hat.jpg | fashion | | pink frame trimmed |
+| 7.jpg | teal-flower-headpiece-styled.jpg | styling | | pink frame trimmed |
+| 8.jpg | event-styling-white-dress.jpg | styling | Hero slide 4 | none |
+| 9.jpg | blue-flower-fascinator.jpg | fashion | | pink frame trimmed |
+| 11.jpg | white-feather-hand-fan.jpg | fashion | Fashion card | top cropped to remove stray text |
+| 12.jpg | peach-feather-hand-fan.jpg | fashion | | cropped out of an Instagram screenshot |
+| 13.jpg | green-loop-fascinator.jpg | fashion | | none |
+| 14.jpg | gold-headpieces-styled.jpg | styling | Styling card | none |
+| 15.jpg | yellow-feather-fascinator.jpg | fashion | | none |
+| 16.jpg | custom-name-hand-fan.jpg | fashion | | edges cropped |
 
-**Current state (2026-10-10): all twelve files are placeholder photos from picsum.photos.** Replace each with the real photo under the same file name; no code changes are needed.
+Not used: `6.jpg` (empty file, 0 bytes) and `10.jpg` (a phone screenshot of the same yellow fascinator as 15.jpg).
 
-The table order is the gallery order. Already in place: `public/resources/logo.jpg`, `public/resources/JossyGlamour-CEO.jpeg`.
+Only one photo shows makeup, so the gallery's Beauty filter has a single image. Already in place: `public/resources/logo.jpg`, `public/resources/JossyGlamour-CEO.jpeg`.
 
 ## Sections
 
@@ -156,7 +157,7 @@ Status: `[ ]` not started, `[x]` done.
 - [x] **9. Page behaviours**
   - Scroll reveal: every section after the hero, and the footer, fades up 36px over .9s when its top comes within 40px of the bottom of the viewport.
   - Back-to-top button: fixed bottom-centre, 52px black circle with an up arrow and `shadow-float`; appears after 600px of scroll; hover pink.
-- [ ] **10. Final pass** (lint, build and a desktop + 500px visual check are done; real photos and a phone-width check are not)
+- [x] **10. Final pass** (lint, build, desktop and phone-width visual checks done with the real photos)
   - Check 375px, 768px and 1320px+ widths; keyboard focus states; `prefers-reduced-motion` for the slideshow, intro and reveals.
   - Image `alt` text, `width`/`height`, lazy-loading below the fold.
   - Update the home `<Seo />`, `sitemap.xml` and the share image if needed.

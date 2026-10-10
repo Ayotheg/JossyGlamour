@@ -19,8 +19,8 @@ function PersonalStyling() {
       <div className="mx-auto grid max-w-site grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-center gap-[clamp(32px,5vw,80px)] px-gutter py-section-y">
         <Reveal className="aspect-[4/4.4] max-h-[min(620px,80vh)] w-full max-w-125 min-w-0 justify-self-start overflow-hidden rounded-[18px] bg-pink-300 tab:aspect-4/5 tab:rounded-xl">
           <img
-            src={stylingImage}
-            alt="Personal styling"
+            src={stylingImage.src}
+            alt={stylingImage.alt}
             loading="lazy"
             className="block size-full object-cover object-[50%_20%]"
           />

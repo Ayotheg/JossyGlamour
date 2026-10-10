@@ -1,20 +1,20 @@
 // Home page content. Service lists come from About.md.
-// The files in public/gallery are placeholders until the real photos replace
-// them under the same names.
-const img = (name) => `/gallery/${name}.jpeg`
+// Photos live in public/gallery; they are cropped, web-sized copies of the
+// originals in public/resources.
+const img = (name) => `/gallery/${name}.jpg`
 
 export const heroSlides = [
-  { src: img('2025-12-Jossy-img-3'), label: 'Custom headwear' },
-  { src: img('2026-01-Beuaty-img-123'), label: 'Beauty services' },
-  { src: img('2026-01-FA-JossyGlamour-6'), label: 'Fashion & accessories' },
-  { src: img('2026-01-Jossyglamour-Parafet-img-7'), label: 'Styling & creative' },
+  { src: img('gold-ribbon-fascinator'), label: 'Custom headwear' },
+  { src: img('red-sunburst-crown-photoshoot'), label: 'Beauty services' },
+  { src: img('teal-flower-headpiece'), label: 'Fashion & accessories' },
+  { src: img('event-styling-white-dress'), label: 'Styling & creative' },
 ]
 
 export const services = [
   {
     num: '01',
     title: 'Beauty Services',
-    img: img('2026-01-Beuaty-img-123'),
+    img: img('red-sunburst-crown-photoshoot'),
     items: [
       'Bridal and event makeup',
       'Makeup for parties, photoshoots, and special events',
@@ -26,7 +26,7 @@ export const services = [
   {
     num: '02',
     title: 'Fashion & Accessories',
-    img: img('2026-01-FA-JossyGlamour-6'),
+    img: img('white-feather-hand-fan'),
     items: [
       'Custom-made hats and fascinators',
       'Bespoke headpieces',
@@ -39,7 +39,7 @@ export const services = [
   {
     num: '03',
     title: 'Styling & Creative Services',
-    img: img('2026-01-Jossyglamour-Parafet-img-7'),
+    img: img('gold-headpieces-styled'),
     items: [
       'One-on-one personal styling consultations',
       'Outfit planning for weddings and traditional events, including multiple outfit changes',
@@ -49,7 +49,10 @@ export const services = [
   },
 ]
 
-export const stylingImage = img('2026-01-Styling-Creative-Services-001')
+export const stylingImage = {
+  src: img('red-feather-fascinator'),
+  alt: 'Red feather fascinator styled with a matching red sequin dress',
+}
 
 export const galleryFilters = [
   { id: 'all', label: 'All' },
@@ -60,16 +63,79 @@ export const galleryFilters = [
 
 // Order matters: it is the display order of the "All" view.
 export const galleryImages = [
-  { src: img('2025-12-Jossy-img-3'), category: 'fashion' },
-  { src: img('2026-01-Beuaty-img-123'), category: 'beauty' },
-  { src: img('2025-12-Jossy-img-4'), category: 'fashion' },
-  { src: img('2026-01-FA-JossyGlamour-6'), category: 'fashion' },
-  { src: img('2025-12-Jossy-img-6'), category: 'beauty' },
-  { src: img('2026-01-Jossyglamour-Parafet-img-7'), category: 'styling' },
-  { src: img('2025-12-Jossy-img-2'), category: 'fashion' },
-  { src: img('2026-01-Jossyglamour-Parafet-img-6'), category: 'styling' },
-  { src: img('2026-01-Jossy-img-2'), category: 'beauty' },
-  { src: img('2026-01-Jossyglamour-Parafet-img-5'), category: 'styling' },
-  { src: img('2026-01-Styling-Creative-Services-001'), category: 'styling' },
-  { src: img('2026-01-Jossyglamour-Parafet-img-8'), category: 'styling' },
+  {
+    src: img('red-feather-fascinator'),
+    category: 'styling',
+    alt: 'Red feather fascinator styled with a matching red sequin dress',
+  },
+  {
+    src: img('gold-ribbon-fascinator'),
+    category: 'fashion',
+    alt: 'Gold ribbon loop fascinator',
+  },
+  {
+    src: img('white-feather-hand-fan'),
+    category: 'fashion',
+    alt: 'White feather hand fan with a gold beaded handle',
+  },
+  {
+    src: img('event-styling-white-dress'),
+    category: 'styling',
+    alt: 'Client styled in a white fringed dress at an event venue',
+  },
+  {
+    src: img('teal-flower-headpiece'),
+    category: 'fashion',
+    alt: 'Teal flower headpiece on gold stems',
+  },
+  {
+    src: img('red-sunburst-crown-photoshoot'),
+    category: 'beauty',
+    alt: 'Photoshoot makeup with a red sunburst crown',
+  },
+  {
+    src: img('black-feather-fascinator'),
+    category: 'fashion',
+    alt: 'Black feather fascinator with a net veil',
+  },
+  {
+    src: img('teal-flower-headpiece-styled'),
+    category: 'styling',
+    alt: 'Teal flower headpiece styled with a matching green dress',
+  },
+  {
+    src: img('green-loop-fascinator'),
+    category: 'fashion',
+    alt: 'Lime green looped fascinator with beaded sprays',
+  },
+  {
+    src: img('gold-headpieces-styled'),
+    category: 'styling',
+    alt: 'Three gold sculpted headpieces styled with gold sequin dresses',
+  },
+  {
+    src: img('blue-flower-fascinator'),
+    category: 'fashion',
+    alt: 'Blue flower fascinator on a headband',
+  },
+  {
+    src: img('yellow-feather-fascinator'),
+    category: 'fashion',
+    alt: 'Yellow feather fascinator with a crystal brooch',
+  },
+  {
+    src: img('green-feather-hat'),
+    category: 'fashion',
+    alt: 'Dark green feather hat with matching mini fascinators',
+  },
+  {
+    src: img('custom-name-hand-fan'),
+    category: 'fashion',
+    alt: 'Customised hand fan with a name and emblem',
+  },
+  {
+    src: img('peach-feather-hand-fan'),
+    category: 'fashion',
+    alt: 'Peach feather hand fan with a beaded handle',
+  },
 ]
