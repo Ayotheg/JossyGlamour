@@ -9,7 +9,14 @@ export const site = {
   logo: '/resources/logo.jpg',
   location: 'Newcastle, United Kingdom',
   phone: '+44 7587 975813',
+  phoneHref: 'tel:+447587975813',
   email: 'info@jossyglamour.com',
+  // Every booking button opens a WhatsApp chat with this number.
   whatsapp: 'https://wa.me/447587975813',
   instagram: 'https://instagram.com/jossyglamour',
+  instagramHandle: '@jossyglamour',
+  hours: [
+    { days: 'Monday – Friday', time: '11:00 am – 9:00 pm' },
+    { days: 'Saturday – Sunday', time: '11:00 am – 5:00 pm' },
+  ],
 }

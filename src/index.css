@@ -71,6 +71,14 @@
 
   /* Motion */
   --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --animate-fade-up: fade-up var(--dur-reveal) var(--ease-out) both; /* hero intro */
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+  }
 }
 
 :root {
@@ -98,6 +106,10 @@
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+
+    .animate-fade-up {
+      animation: none;
     }
   }
 }

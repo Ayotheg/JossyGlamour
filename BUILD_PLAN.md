@@ -112,6 +112,8 @@ All twelve go in `public/gallery/`, named as `download-images.sh` names them (th
 | 11 | `2026/01/Styling-Creative-Services-001.jpeg` | `2026-01-Styling-Creative-Services-001.jpeg` | styling | Personal Styling section, gallery |
 | 12 | `2026/01/Jossyglamour-Parafet-img-8.jpeg` | `2026-01-Jossyglamour-Parafet-img-8.jpeg` | styling | Gallery |
 
+**Current state (2026-10-10): all twelve files are placeholder photos from picsum.photos.** Replace each with the real photo under the same file name; no code changes are needed.
+
 The table order is the gallery order. Already in place: `public/resources/logo.jpg`, `public/resources/JossyGlamour-CEO.jpeg`.
 
 ## Sections
@@ -119,42 +121,42 @@ The table order is the gallery order. Already in place: `public/resources/logo.j
 Status: `[ ]` not started, `[x]` done.
 
 - [x] **0. Design tokens and fonts**
-- [ ] **1. Navbar** — `src/components/Navbar.jsx` (replace the current one)
+- [x] **1. Navbar** — `src/components/Navbar.jsx` (replace the current one)
   - Sticky, `bg-white`, bottom border `charcoal/8`, padding 20px / gutter, `max-w-site`.
   - Logo 52px tall with `mix-blend-multiply`.
   - Links HOME, SERVICES, ABOUT, CONTACT: Geist 12px, weight 500, tracking 0.12em, `text-charcoal`, active/hover `text-pink-500`. They point at `#services`, `#about`, `#contact`.
   - Mobile: hamburger toggle with a dropdown menu (`shadow-menu`).
   - "Book an Appointment" pill (opens WhatsApp): `bg-pink-500`, calendar icon, 14px `font-ui` 600, padding 14×26, `shadow-cta`; hover black with no shadow.
-- [ ] **2. Hero** — `home/Hero.jsx`
+- [x] **2. Hero** — `home/Hero.jsx`
   - Two-column auto-fit grid (min 420px), centred vertically.
   - `h1` "Endless beauty without borders." with the second half in pink; intro paragraph (max 500px); two buttons (black "Book an Appointment →", outlined "Explore Services").
   - Arched image frame (4:5, `rounded-arch`, max 420px) with a 4-slide cross-fade every 5s, slow zoom on the active slide, caption label, and clickable dash indicators.
   - Pink badge overlapping bottom-left: "Fascinators, hats, turbans & gele" / "Made to order for special occasions".
   - Staggered fade-up intro on load (18px offset; delays .12s, .24s, .36s; image .2s).
-- [ ] **3. Services** — `home/Services.jsx`, `id="services"`
+- [x] **3. Services** — `home/Services.jsx`, `id="services"`
   - Eyebrow "Services", heading "Our Services", black "Book a Service" button on the right.
   - Three cards (auto-fit, min 320px): 4:3 image, number, title, bulleted list with hairline dividers, "Book this service →" (WhatsApp; see assumptions). Hover lifts 4px with `shadow-card`.
   - Card content is the three service groups in `About.md`.
-- [ ] **4. Personal Styling** — `home/PersonalStyling.jsx`
+- [x] **4. Personal Styling** — `home/PersonalStyling.jsx`
   - `bg-white` band. Image left (4:5, max 500px, `object-position: 50% 20%`), text right.
   - Eyebrow "One-on-one", heading "Personal Styling & Consultation", intro line, rows A and B with hairline dividers, pink "Book a Consultation" button.
-- [ ] **5. About** — `home/About.jsx`, `id="about"`
+- [x] **5. About** — `home/About.jsx`, `id="about"`
   - `bg-white` band with `line-pink` top and bottom borders.
   - Founder portrait (200–260px wide) with a pink name plate: "Josephine Chukwu" / "FOUNDER · CREATIVE DIRECTOR". Beside it: eyebrow "About Jossyglamour" and heading "Led by founder and creative director Josephine Chukwu."
   - Three columns under a hairline: "01 — Who We Are", "02 — Our Founder", "03 — Our Vision".
-- [ ] **6. Our Work** — `home/Gallery.jsx`, `id="work"`
+- [x] **6. Our Work** — `home/Gallery.jsx`, `id="work"`
   - Eyebrow "Gallery", heading "Our Work", outlined "More on Instagram ↗" button.
   - Filter pills: All, Beauty Services, Fashion & Accessories, Styling & Creative Services. Active pill is black.
   - Dense grid (auto-fill, min 240px, 240px rows, 14px gap). On "All", tiles 1, 4, 8 and 11 span two rows; on a filter, every third tile starting with the first does. Hover zooms the image to 1.04.
-- [ ] **7. Treat Yourself** — `home/BookingCta.jsx`
+- [x] **7. Treat Yourself** — `home/BookingCta.jsx`
   - Pink panel, max 1176px, `rounded-2xl`. Eyebrow "Book An Appointment", heading "Treat Yourself" (clamp 48–84px), paragraph, black "Book a Service →" and outlined "Call Us" (`tel:+447587975813`).
-- [ ] **8. Footer** — `src/components/Footer.jsx` (replace the current one), `id="contact"`
+- [x] **8. Footer** — `src/components/Footer.jsx` (replace the current one), `id="contact"`
   - `bg-black` (owner decision). Four columns (auto-fit, min 220px): logo (64px, inverted, `mix-blend-screen`) with tagline paragraph; Contact links; Opening Hours; Private Consultations with "BOOK A CONSULTATION ↗" (WhatsApp).
   - Bottom bar: "© {current year} Jossyglamour. All rights reserved." No legal links.
-- [ ] **9. Page behaviours**
+- [x] **9. Page behaviours**
   - Scroll reveal: every section after the hero, and the footer, fades up 36px over .9s when its top comes within 40px of the bottom of the viewport.
   - Back-to-top button: fixed bottom-centre, 52px black circle with an up arrow and `shadow-float`; appears after 600px of scroll; hover pink.
-- [ ] **10. Final pass**
+- [ ] **10. Final pass** (lint, build and a desktop + 500px visual check are done; real photos and a phone-width check are not)
   - Check 375px, 768px and 1320px+ widths; keyboard focus states; `prefers-reduced-motion` for the slideshow, intro and reveals.
   - Image `alt` text, `width`/`height`, lazy-loading below the fold.
   - Update the home `<Seo />`, `sitemap.xml` and the share image if needed.
@@ -167,6 +169,8 @@ Status: `[ ]` not started, `[x]` done.
 4. **Anything pointing at services goes to `#services`** ("Explore Services", the SERVICES nav link).
 5. **Footer background is pure black** (`bg-black`), not charcoal.
 6. **Keep a mobile menu** (hamburger toggle, dropdown with `shadow-menu`), even though the design only wraps the links.
+8. **Navbar highlight follows the scroll.** The pink link is the section currently on screen (Home, Services, About, Contact), not just the one last clicked.
+9. **Scroll animation is per block, not per section.** Headings, cards, columns, gallery tiles and the footer content each fade up as they enter the view, with a short stagger. There is no timer that reveals everything.
 7. **Only use facts from `About.md`.** Where the design says something `About.md` does not, use the `About.md` wording:
    - Copyright: "© {current year} Jossyglamour. All rights reserved." (drop "Atelier & Beauty Ltd").
    - "STUDIO HOURS" becomes "OPENING HOURS"; "NEWCASTLE STUDIO" becomes "CONTACT"; "Call the Studio" becomes "Call Us"; "RESERVE FITTING" becomes "BOOK A CONSULTATION". `About.md` never mentions a studio or fittings.
