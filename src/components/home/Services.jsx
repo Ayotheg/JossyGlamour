@@ -42,7 +42,7 @@ function Services() {
                   src={service.img}
                   alt={service.title}
                   loading="lazy"
-                  className="block size-full object-cover"
+                  className={`block size-full object-cover ${service.imgPosition ?? ''}`}
                 />
               </div>
               <div className="flex flex-1 flex-col gap-3.5 p-5.5 tab:p-7">

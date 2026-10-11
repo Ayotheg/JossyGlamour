@@ -101,7 +101,7 @@ The owner supplied 16 photos as `public/resources/1.jpg` to `16.jpg` on 2026-10-
 | 2.jpg | gold-ribbon-fascinator.jpg | fashion | Hero slide 1 | none |
 | 3.jpg | teal-flower-headpiece.jpg | fashion | Hero slide 3 | none |
 | 4.jpg | black-feather-fascinator.jpg | fashion | | pink frame trimmed |
-| 5.jpg | red-sunburst-crown-photoshoot.jpg | beauty | Hero slide 2, Beauty card | cropped out of an Instagram screenshot |
+| makeup.jpg | makeup-pink-gele.jpg | beauty | Hero slide 2, Beauty card | none (added 2026-10-11; replaced the red sunburst crown photo from 5.jpg everywhere) |
 | 6(1).jpg | green-feather-hat.jpg | fashion | | pink frame trimmed |
 | 7.jpg | teal-flower-headpiece-styled.jpg | styling | | pink frame trimmed |
 | 8.jpg | event-styling-white-dress.jpg | styling | Hero slide 4 | none |
@@ -112,6 +112,8 @@ The owner supplied 16 photos as `public/resources/1.jpg` to `16.jpg` on 2026-10-
 | 14.jpg | gold-headpieces-styled.jpg | styling | Styling card | none |
 | 15.jpg | yellow-feather-fascinator.jpg | fashion | | none |
 | 16.jpg | custom-name-hand-fan.jpg | fashion | | edges cropped |
+
+Service card photos were changed by the owner on 2026-10-11; these three later photos were then added to the gallery grid too (18 tiles: 2 beauty, 11 fashion, 5 styling): Beauty uses `makeup-red-gele.jpg` (from `makeup-2.jpg`), Fashion uses `print-gele-headwrap.jpg` (from `MAKEUP-3.jpg`, resized), Styling uses `red-feather-fascinator.jpg`. The Personal Styling ("One-on-one") section uses `traditional-outfit-red-gele.jpg` (from `ONE-on-ONE.jpg`), and hero slide 4 uses `print-gele-headwrap.jpg`.
 
 Not used: `6.jpg` (empty file, 0 bytes) and `10.jpg` (a phone screenshot of the same yellow fascinator as 15.jpg).
 
