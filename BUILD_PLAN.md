@@ -170,7 +170,7 @@ Source: `Jossy Glamour Redesign-mobile/Jossyglamour Home.dc.html` (exported 2026
 - Below 860px the "Book a Service" and "More on Instagram" buttons move below their grids as full-width buttons.
 - Below 560px: two-column gallery with 170px rows, smaller filter pills, 18px card corners, full-width founder photo, stacked CTA buttons, single-column footer with extra bottom padding for the back-to-top button. Between 560px and 860px the footer is two columns.
 - Section padding now starts at 56px instead of 72px.
-- The same folder has `Jossyglamour 404.dc.html`, a 404 page design that has **not** been built.
+- The same folder has `Jossyglamour 404.dc.html`. It is built in `src/pages/NotFound.jsx` (2026-10-11), inside the shared navbar and footer rather than the design's cut-down header and grey footer bar. Its three service links go to `/#services` and "Contact Us" scrolls to the footer.
 
 ## Owner decisions (2026-10-10) — these override the design
 
