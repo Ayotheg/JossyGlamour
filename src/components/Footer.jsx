@@ -38,10 +38,10 @@ function Footer() {
             <img
               src={site.logo}
               alt={site.name}
-              width="1280"
-              height="677"
+              width="800"
+              height="432"
               loading="lazy"
-              className="h-16 w-auto self-start mix-blend-screen invert"
+              className="h-16 w-auto self-start"
             />
             <p className="mt-1 max-w-70 text-[13.5px] leading-[1.7] text-pretty text-grey-300">
               {site.slogan} Custom headwear, fascinators, professional makeup,

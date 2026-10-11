@@ -119,6 +119,8 @@ Not used: `6.jpg` (empty file, 0 bytes) and `10.jpg` (a phone screenshot of the 
 
 Only one photo shows makeup, so the gallery's Beauty filter has a single image. Already in place: `public/resources/logo.jpg`, `public/resources/JossyGlamour-CEO.jpeg`.
 
+**Logo (changed 2026-10-11):** the owner's pink logo is `public/resources/NewLogo.jpg`. The navbar and footer use `public/logo.png`, a transparent copy generated from it, with no blend or invert effects. The favicons, `apple-touch-icon.png` and `og-image.jpg` were regenerated from the same file. The old black `resources/logo.jpg` is no longer referenced.
+
 ## Sections
 
 Status: `[ ]` not started, `[x]` done.

@@ -80,9 +80,9 @@ function Navbar() {
           <img
             src={site.logo}
             alt={site.name}
-            width="1280"
-            height="677"
-            className="block h-10.5 w-auto mix-blend-multiply desk:h-13"
+            width="800"
+            height="432"
+            className="block h-10.5 w-auto desk:h-13"
           />
         </Link>
 

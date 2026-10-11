@@ -6,7 +6,8 @@ export const site = {
   description:
     'Jossyglamour is a Newcastle-based beauty and fashion brand offering bridal makeup, custom fascinators, hats, gele, turbans, and personal styling for weddings and special events.',
   slogan: 'Endless Beauty Without Borders.',
-  logo: '/resources/logo.jpg',
+  // Transparent copy of public/resources/NewLogo.jpg, so it sits on any background.
+  logo: '/logo.png',
   location: 'Newcastle, United Kingdom',
   phone: '+44 7587 975813',
   phoneHref: 'tel:+447587975813',
