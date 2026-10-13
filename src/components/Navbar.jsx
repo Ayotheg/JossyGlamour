@@ -80,8 +80,8 @@ function Navbar() {
           <img
             src={site.logo}
             alt={site.name}
-            width="800"
-            height="432"
+            width="744"
+            height="240"
             className="block h-10.5 w-auto desk:h-13"
           />
         </Link>

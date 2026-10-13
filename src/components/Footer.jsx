@@ -36,12 +36,12 @@ function Footer() {
         <div className="grid grid-cols-1 gap-9 pb-[clamp(40px,7vw,96px)] tab:grid-cols-2 tab:gap-12 desk:grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))]">
           <div className="flex flex-col gap-3">
             <img
-              src={site.logo}
+              src={site.logoFooter}
               alt={site.name}
-              width="800"
-              height="432"
+              width="538"
+              height="420"
               loading="lazy"
-              className="h-16 w-auto self-start"
+              className="h-24 w-auto self-start"
             />
             <p className="mt-1 max-w-70 text-[13.5px] leading-[1.7] text-pretty text-grey-300">
               {site.slogan} Custom headwear, fascinators, professional makeup,

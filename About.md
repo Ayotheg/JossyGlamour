@@ -70,3 +70,7 @@ Jossyglamour is a Newcastle-based beauty and fashion brand offering bridal makeu
 
 **Keywords:**
 makeup artist Newcastle, bridal makeup Newcastle, fascinators UK, custom hats Newcastle, gele UK, African headwrap UK, turbans, hand fans, wedding headpieces, personal stylist Newcastle, costume hire Newcastle, microblading Newcastle, hair braids Newcastle, Jossyglamour, Josephine Chukwu
+
+
+
+
