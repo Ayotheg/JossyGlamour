@@ -10,13 +10,8 @@ function Home() {
   return (
     <>
       <Seo />
-      <Hero />
-      <Services />
-      <PersonalStyling />
-      <About />
-      <Gallery />
-      <BookingCta />
-    </>
+      <h1 className="text-3xl font-bold tracking-tight">Hello world</h1>
+    </section>
   )
 }
 
